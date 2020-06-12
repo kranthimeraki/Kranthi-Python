@@ -1,0 +1,52 @@
+from tkinter import *
+    
+box = Tk()
+
+
+
+fr1=Frame(box)
+fr1.pack()
+fr2=Frame(box)
+fr2.pack()
+
+
+box.title("BIG C")
+
+Buyer = Label(fr1,text = 'Obligation')
+Buyer.pack(side = 'left')
+
+obl = Entry(fr1,width = 30,bg='green')
+obl.pack()
+
+items=['vivo','mi','apple','appo']
+print(f'Existed phones are {items}')
+
+
+def buy():
+    Ureq=obl.get()
+    Ureq=str(Ureq.lower())
+    obl.delete(0,END)
+    
+    print(f'Added phone is: {Ureq} ')
+    items.append(Ureq)
+    print(f' Available phones are: {items} ')
+
+
+def sell():
+    Ureq=obl.get()
+    obl.delete(0,END)
+    print(f'Removed phone is: {Ureq}')
+    items.remove(Ureq)
+    print(f' Available phones are: {items}')
+
+
+
+gbu = Button(fr1,text='Buy',bg='purple',fg='black',command=buy)
+gbu.pack(side='left')
+
+rbu = Button(fr2,text='Sell',bg='blue',fg='black',command=sell)
+rbu.pack(side='right')
+
+box.mainloop()
+
+    

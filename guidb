@@ -1,0 +1,58 @@
+from tkinter import *   
+import sqlite3
+
+sqlite3.connect('employe.db')
+  
+top = Tk()  
+  
+top.geometry("8000x600")  
+  
+b = Button(top,text = "Employee")  
+  
+b.pack()  
+  
+fr1=Frame(top)
+fr1.pack()
+fr2=Frame(top)
+fr2.pack()
+
+
+
+
+uname = Label(top, text = "Firstname").place(x = 30,y = 50)  
+
+
+password = Label(top, text = "Lastname").place(x = 30, y = 90)
+
+  
+obl = Entry(fr1,width = 30,bg='white')
+obl.pack()
+
+ob2 = Entry(fr2,width = 30,bg='white')
+ob2.pack()
+
+
+
+conn.execute("INSERT INTO Employees (fname,lname)
+
+#def add():
+    fname=obl.get()
+    lname=ob2.get()        
+    
+    obl.delete(0,END)
+    ob2.delete(0,END)
+     
+     
+
+
+    conn.execute('''''CREATE TABLE Employees 
+       (fname     TEXT PRIMARY KEY     NOT NULL, 
+       lname           TEXT    NOT NULL, 
+      );''')  
+print "Table created successfully";  
+  
+conn.close()  
+
+
+
+top.mainaloop()  
